@@ -1,0 +1,57 @@
+/* Initial State */
+
+.main__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.form__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.form {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.fname, .lname, .password, .check-password {
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.label__fname, .label__lname, .label__password, .label__check-password {
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    display: none;
+}
+
+.btn {
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.requirements {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.password__requirements {
+    list-style: none;
+}
+
+.passed {
+    color:green;
+}
