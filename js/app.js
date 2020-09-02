@@ -7,9 +7,9 @@
     // It should update the 'requirement list' as requirements are met.
     // It should update the 'requirement list' to initial state if requirements are NOT met. (password deleted)
 
-    // It should display 'Weak' if characters count < 10.
-    // It should display 'Medium' if characters count = 10.
-    // It should display 'Strong' if characters count > 10.
+    // It should display 'Weak' if characters count === 8.
+    // It should display 'Medium' if characters count >= 9 < 12.
+    // It should display 'Strong' if characters count > 13.
 
     // If characters count >= 10 and requirements are met, 'confirm password input field should be enable.
     // If input value on 'confirm password' field is === to passwordPass, enable button 'check password'.
