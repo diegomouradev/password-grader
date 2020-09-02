@@ -11,7 +11,7 @@
     // It should display 'Medium' if characters count >= 9 < 12.
     // It should display 'Strong' if characters count > 13.
 
-    // If characters count >= 10 and requirements are met, 'confirm password input field should be enable.
+    // If characters count >= 8 and requirements are met, 'confirm password input field should be enable.
     // If input value on 'confirm password' field is === to passwordPass, enable button 'check password'.
     // When 'check password button' is clicked, display alert containing 'password strength' + passwordPass.
     
@@ -36,11 +36,26 @@
             let passwordInput = document.getElementById('password');
             passwordInput.addEventListener('input', function() {
                 App.checkInput(event);
-            });       
+            });
+
+            let toggleBtn = document.getElementById('toggle-password');
+            toggleBtn.addEventListener('click', function(){
+                App.togglePassword();
+            });
         },
         checkInput: function(event) {
-            inputValue =  event.data;
-            passwordSoFar = passwordSoFar + inputValue;
+    
+            if(event.inputType === 'deleteContentBackward'){
+                let numberOfDeletedCharacters = 0;
+                numberOfDeletedCharacters++;
+
+                let deleteFrom =  passwordSoFar.length - numberOfDeletedCharacters;
+                passwordSoFar = passwordSoFar.substr(deleteFrom, passwordSoFar.length - 1);
+                
+            } else {
+                inputValue =  event.data;
+                passwordSoFar = passwordSoFar + inputValue;
+            }
 
             if(passwordSoFar.length <= 8) {
                 this.renderRequirements(passwordSoFar, inputValue);
@@ -48,6 +63,23 @@
             } else {
                 this.renderStrength(passwordSoFar);
             };    
+        },
+        togglePassword: function() {
+            
+            let passwordInput = document.getElementById('password');
+            let toggleBtn = document.getElementById('toggle-password-btn');
+
+            if(passwordInput.type === 'password'){
+                passwordInput.type = 'text';
+                toggleBtn.classList.remove('fa-eye-slash');
+                toggleBtn.classList.add('fa-eye');
+                
+
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.classList.remove('fa-eye');
+                toggleBtn.classList.add('fa-eye-slash');
+            };
         },
         renderRequirements: function(passwordSoFar,inputValue) {
 

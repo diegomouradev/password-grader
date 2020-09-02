@@ -2,6 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/64c369e33d.js" crossorigin="anonymous"></script>
     <!-- CSS -->
@@ -12,7 +14,7 @@
     
     <main class="main__wrapper">
         <div class="form__wrapper">
-            <h1 class="heading__secondary">
+            <h1 class="heading__primary">
                 Password Grader
             </h1>
             <p class="paragraph">
@@ -20,9 +22,9 @@
                 Once you meet all the requirements, click the button and get your new password.
             </p>
             <form id="form" class="form">
-                <input id="password" class="password" type="password" placeholder="Password" required>
-                <label for="password" class="label__password">Password</label>
-                <input id="confirm-password" class="confirm-password" type="text" placeholder="Confirm Password" disabled>
+                <input id="password" class="password" type="password" placeholder="Password" minlength="8" maxlength="15" required>
+                <label id="toggle-password" for="password" class="label__password"><i id="toggle-password-btn" class="fas fa-eye-slash"></i></label>
+                <input id="confirm-password" class="confirm-password" type="password" placeholder="Confirm Password" minlength="8" maxlength="15" disabled>
                 <label for="confirm-password" class="label__confirm-password">Confirm Password</label>
                 <button id="btn" class="btn" disabled>Check Password</button>
             </form>
@@ -32,19 +34,17 @@
                 Password Requirements
             </h2>
             <ul class="password__requirements">
-                <li id="requirement__one" class=""> It should contain at least two upper letter case</li>
-                <li id="requirement__two" class=""> It should contain at least two lower letter case</li>
-                <li id="requirement__three" class=""> It should contain at least two symbol</li>
-                <li id="requirement__four" class=""> It should contain at least two number</li>
-                <li id="requirement__five" class=""> It should be at least 8 and maximum 15 characters long</li>
+                <li id="requirement__one" class=""> <p class="paragraph">It should contain at least two upper letter case</p></li>
+                <li id="requirement__two" class=""> <p class="paragraph">It should contain at least two lower letter case</p></li>
+                <li id="requirement__three" class=""> <p class="paragraph">It should contain at least two symbol</p></li>
+                <li id="requirement__four" class=""> <p class="paragraph">It should contain at least two number</p></li>
+                <li id="requirement__five" class=""> <p class="paragraph">It should be at least 8 and maximum 15 characters long</p></li>
             </ul>
             <h2 class="heading__secondary">
                 Password Strength
             </h2>
             <div id="password__strength" class="password__strength">
-                <span id='weak' class="no-display-strength weak"><h3>Weak</h3></span>
-                <span id='medium' class="no-display-strength medium"><h3>Medium</h3></span>
-                <span id='strong' class="no-display-strength strong"><h3>Strong</h3></span>
+              
             </div>
         </div>
     </main>

@@ -1,0 +1,23 @@
+{
+  "name": "password-grader",
+  "version": "1.0.0",
+  "description": "Reg Exp exercise",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegomouradev/password-grader.git"
+  },
+  "author": "Diego",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegomouradev/password-grader/issues"
+  },
+  "homepage": "https://github.com/diegomouradev/password-grader#readme"
+}

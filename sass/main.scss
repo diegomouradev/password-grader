@@ -1,0 +1,73 @@
+@import 'typography.scss';
+@import 'base.scss';
+
+.main__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.form__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.password {
+    width: 30rem;
+    height: 4rem;
+    border-radius: 5rem;
+    padding: 1rem;
+    border: none;
+    background-color: beige;
+    
+}
+
+.label__confirm-password {
+    display: none;
+}
+
+.btn {
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.requirements {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.password__requirements {
+    list-style: none;
+}
+
+.passed {
+    color:green;
+}
+
+.password__strength {
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    background-color: goldenrod;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+    box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+}
+
+.display-strength {
+    
+}
