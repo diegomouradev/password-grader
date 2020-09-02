@@ -21,14 +21,14 @@
 
 }
 
-.fname, .lname, .password, .check-password {
+.fname, .lname, .password, .confirm-password {
     width: 200px;
     border-radius: 5px;
     padding: 5px;
     margin: 10px auto;
 }
 
-.label__fname, .label__lname, .label__password, .label__check-password {
+.label__fname, .label__lname, .label__password, .label__confirm-password {
     width: 200px;
     border-radius: 5px;
     padding: 5px;
@@ -54,4 +54,24 @@
 
 .passed {
     color:green;
+}
+
+.password__strength {
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    background-color: goldenrod;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+    box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.27);
+}
+
+.display-strength {
+    
+}
+.no-display-strength {
+    display: none;
 }
