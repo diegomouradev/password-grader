@@ -34,3 +34,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.main__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 90vw;
+    margin: 0 auto;
+}

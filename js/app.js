@@ -33,14 +33,14 @@
         },
         setUpEventListeners: function() {
     
-            let passwordInput = document.getElementById('password');
+            let passwordInput = document.getElementById('password-field');
             passwordInput.addEventListener('input', function() {
                 App.checkInput(event);
             });
 
-            let toggleBtn = document.getElementById('toggle-password');
-            toggleBtn.addEventListener('click', function(){
-                App.togglePassword();
+            let passwordToggleView = document.getElementById('password-toggle');
+            passwordToggleView.addEventListener('click', function(){
+                App.togglePasswordView();
             });
         },
         checkInput: function(event) {
@@ -64,21 +64,21 @@
                 this.renderStrength(passwordSoFar);
             };    
         },
-        togglePassword: function() {
+        togglePasswordView: function() {
             
-            let passwordInput = document.getElementById('password');
-            let toggleBtn = document.getElementById('toggle-password-btn');
+            let passwordInput = document.getElementById('password-field');
+            let togglePasswordBtn = document.getElementById('password-btn');
 
             if(passwordInput.type === 'password'){
                 passwordInput.type = 'text';
-                toggleBtn.classList.remove('fa-eye-slash');
-                toggleBtn.classList.add('fa-eye');
+                togglePasswordBtn.classList.remove('fa-eye-slash');
+                togglePasswordBtn.classList.add('fa-eye');
                 
 
             } else {
                 passwordInput.type = 'password';
-                toggleBtn.classList.remove('fa-eye');
-                toggleBtn.classList.add('fa-eye-slash');
+                togglePasswordBtn.classList.remove('fa-eye');
+                togglePasswordBtn.classList.add('fa-eye-slash');
             };
         },
         renderRequirements: function(passwordSoFar,inputValue) {

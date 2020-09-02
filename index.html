@@ -22,10 +22,22 @@
                 Once you meet all the requirements, click the button and get your new password.
             </p>
             <form id="form" class="form">
-                <input id="password" class="password" type="password" placeholder="Password" minlength="8" maxlength="15" required>
-                <label id="toggle-password" for="password" class="label__password"><i id="toggle-password-btn" class="fas fa-eye-slash"></i></label>
+                <!-- Password -->
+                <input id="password-field" class="password-field--enable" type="password" placeholder="Password" minlength="8" maxlength="15" required>
+                
+                <!-- Button Show Password -->
+                <label id="password-toggle" for="password" class="password-toggle--enable">
+                    <i id="password-btn" class="fas fa-eye-slash"></i>
+                </label>
+
+                <!-- Confirm Password -->
                 <input id="confirm-password" class="confirm-password" type="password" placeholder="Confirm Password" minlength="8" maxlength="15" disabled>
-                <label for="confirm-password" class="label__confirm-password">Confirm Password</label>
+                
+                <!-- Button Show Confirm Password -->
+                <label for="confirm-password-toggle" class="password-toggle--disable">
+                    <i id="confirm-password-btn" class="fas fa-eye-slash"></i>
+                </label>
+
                 <button id="btn" class="btn" disabled>Check Password</button>
             </form>
         </div>
