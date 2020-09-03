@@ -24,8 +24,7 @@
     // It should have at least 2 symbols.
 
 (function () {
-    var inputValue;
-    var passwordSoFar = '';
+    let passwordSoFar = '';
     
     var App = {
         init: function() {
@@ -35,7 +34,7 @@
     
             let passwordInput = document.getElementById('password-field');
             passwordInput.addEventListener('input', function() {
-                App.buildPassword(event, passwordInput);
+                    App.buildPassword(event, passwordInput);
             });
 
             let passwordToggleView = document.getElementById('password-toggle');
@@ -43,33 +42,18 @@
                 App.togglePasswordView();
             });
         },
-        buildPassword: function(event, passwordInput) {
-   
-            if(event.data !== null) {
-                inputValue =  event.data;
+        buildPassword: function(event) {
+
+            if(event.data){
+                var inputValue =  event.data;
                 passwordSoFar = passwordSoFar + inputValue;
-
-                if(passwordSoFar.length <= 8) {
-                    this.renderRequirements(passwordSoFar, inputValue);
-    
-                } else {
-                    this.renderStrength(passwordSoFar);
-                }
-            } else if(event.data === null){
-
-                passwordInput.setAttribute('type', 'text');
-                let inputValueSoFar = passwordInput.value;
-                passwordInput.setAttribute('type', 'password');
-                this.updatePassword(inputValueSoFar, passwordSoFar);
-            };
-
-           
-        },
-        updatePassword: function(inputValueSoFar, passwordSoFar) {
-            if(passwordSoFar !== inputValueSoFar){
-                passwordSoFar = inputValueSoFar;
-                this.renderRequirements(passwordSoFar);
+                this.renderRequirements(passwordSoFar, inputValue);
+            } else {
+                passwordSoFar = '';
+                let passwordInput = document.getElementById('password-field').value = '';
+                this.resetRequirements(passwordSoFar);
             }
+            
         },
         togglePasswordView: function() {
             
@@ -89,65 +73,46 @@
             };
         },
         renderRequirements: function(passwordSoFar,inputValue) {
+
+            let upperCasePass = document.getElementById('requirement__one');
+            let lowerCasePass = document.getElementById('requirement__two');
+            let symbolCasePass = document.getElementById('requirement__three');
+            let numberCasePass = document.getElementById('requirement__four');
+
+            if(inputValue === inputValue.toUpperCase() && isNaN(inputValue) && inputValue.match(/[^A-z\s\d][\\\^]?/g) === null) {
+                if(passwordSoFar.match(/[A-Z]/g).length >= 2) {
+                    upperCasePass.classList.add('passed');
+                } 
+            } else if(inputValue === inputValue.toLowerCase() && isNaN(inputValue) && inputValue.match(/[^A-z\s\d][\\\^]?/g) === null) {
+                if(passwordSoFar.match(/[a-z]/g).length >= 2) {
+                    lowerCasePass.classList.add('passed');
+                }
+            } else if(inputValue === Number(inputValue).toString()) {
+                if(passwordSoFar.match(/[0-9]/g).length >= 2) {
+                    numberCasePass.classList.add('passed');
+                }
+            } else if(!(passwordSoFar.match(/[^a-zA-Z0-9]/g) === null)) {
+                if(passwordSoFar.match(/[^a-zA-Z0-9]/g).length >= 2) {
+                    symbolCasePass.classList.add('passed');
+                };
+            };
             
-
-            if(arguments.length < 2 && passwordSoFar === '') {
-
-                let resetAllRequirements = document.querySelectorAll('li');
-                resetAllRequirements.forEach(function(element) {
-                    element.classList.remove('passed');
-                });
-
-            } else if(arguments.length < 2) {
-
-                let upperCaseNoPass = document.getElementById('requirement__one');
-                let lowerCaseNoPass = document.getElementById('requirement__two');
-                let symbolCaseNoPass = document.getElementById('requirement__three');
-                let numberCaseNoPass = document.getElementById('requirement__four');
-
-                if((passwordSoFar.match(/[A-Z]/g)).length < 2) {
-                    upperCaseNoPass.classList.remove('passed');
-                } else if ((passwordSoFar.match(/[a-z]/g)).length < 2 ) {
-                    lowerCaseNoPass.classList.remove('passed');
-                } else if((passwordSoFar.match(/[0-9]/g)).length < 2) {
-                    numberCaseNoPass.classList.remove('passed');
-                } else if((passwordSoFar.match(/[^a-zA-Z0-9]/g)).length < 2) {
-                    symbolCaseNoPass.classList.remove('passed');
-                }
-            } else if(arguments.length === 2) {
-
-                let upperCasePass = document.getElementById('requirement__one');
-                let lowerCasePass = document.getElementById('requirement__two');
-                let symbolCasePass = document.getElementById('requirement__three');
-                let numberCasePass = document.getElementById('requirement__four');
-
-                if(inputValue === inputValue.toUpperCase() && isNaN(inputValue) && inputValue.match(/[^A-z\s\d][\\\^]?/g) === null) {
-                    if(passwordSoFar.match(/[A-Z]/g).length >= 2) {
-                        upperCasePass.classList.add('passed');
-                    } 
-                } else if(inputValue === inputValue.toLowerCase() && isNaN(inputValue) && inputValue.match(/[^A-z\s\d][\\\^]?/g) === null) {
-                    if(passwordSoFar.match(/[a-z]/g).length >= 2) {
-                        lowerCasePass.classList.add('passed');
-                    }
-                } else if(inputValue === Number(inputValue).toString()) {
-                    if(passwordSoFar.match(/[0-9]/g).length >= 2) {
-                        numberCasePass.classList.add('passed');
-                    }
-                } else if(!(passwordSoFar.match(/[^a-zA-Z0-9]/g) === null)) {
-                    if(passwordSoFar.match(/[^a-zA-Z0-9]/g).length >= 2) {
-                        symbolCasePass.classList.add('passed');
-                    }
-                }
-            }
-        
-
             let passwordIsMatch = Boolean(passwordSoFar.match(/^((?=(.*[\d]){2,})(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*[^\w\d\s]){2,})).{8,15}$/g));
             
             if(passwordIsMatch) {
                 let hasMinCharacter = document.getElementById('requirement__five');
                 hasMinCharacter.classList.add('passed');
                 this.renderStrength(passwordSoFar);
-            }
+            };
+        },
+        resetRequirements: function (passwordSoFar) {
+
+            let resetAllRequirements = document.querySelectorAll('li');
+            resetAllRequirements.forEach(function(element) {
+                element.classList.remove('passed');
+            });
+
+            let resetPasswordStrength = document.getElementById('password__strength').innerHTML = '';
         },
         renderStrength: function(passwordSoFar) {
             var passwordStrength = document.getElementById('password__strength');
