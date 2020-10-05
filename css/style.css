@@ -3,55 +3,46 @@
 
 .form {
   display: grid;
-  grid-template-columns: 1fr min-content; }
+  grid-template-columns: 1fr 5rem;
+  justify-items: center; }
 
-.password-field--enable {
-  width: 100%;
-  height: 4rem;
+.password-field {
+  width: 40rem;
+  height: 4.5rem;
   border-radius: 5rem;
-  padding: 1rem;
-  border: none;
-  background-color: #FFFFFF;
-  margin: 2rem 0;
-  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.12); }
-  .password-field--enable::placeholder {
-    font-family: inherit;
-    font-size: 1.6rem;
-    color: black; }
+  padding: 1.5rem;
+  border: none; }
+  .password-field--enable {
+    background-color: #FFFFFF;
+    margin: 2rem 0;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.12); }
+    .password-field--enable::placeholder {
+      font-family: inherit;
+      font-size: 1.6rem;
+      color: black; }
+  .password-field--disable {
+    background-color: 10px 10px 44px 0px rgba(0, 0, 0, 0.17);
+    margin: 1rem 0;
+    box-shadow: #FFFFFF; }
+    .password-field--disable::placeholder {
+      font-family: inherit;
+      font-size: 1.6rem;
+      color: rgba(0, 0, 0, 0.322); }
 
-.password-field--disable {
-  width: 100%;
-  height: 4rem;
-  border-radius: 5rem;
-  padding: 1rem;
-  border: none;
-  background-color: 10px 10px 44px 0px rgba(0, 0, 0, 0.17);
-  margin: 1rem 0;
-  box-shadow: #FFFFFF; }
-  .password-field--disable::placeholder {
-    font-family: inherit;
-    font-size: 1.6rem;
-    color: rgba(0, 0, 0, 0.322); }
-
-.password-toggle--enable {
+.password-toggle {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  margin-left: -3rem;
-  color: rgba(0, 0, 0, 0.541); }
-
-.password-toggle--disable {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-left: -3rem;
-  color: rgba(0, 0, 0, 0.17); }
+  font-size: 1.5rem; }
+  .password-toggle--enable {
+    color: rgba(0, 0, 0, 0.541); }
+  .password-toggle--disable {
+    color: rgba(0, 0, 0, 0.17); }
 
 .label__confirm-password {
   display: none; }
 
 .btn {
-  width: 50%;
+  width: 20rem;
   height: 4rem;
   border-radius: 5rem;
   padding: 1rem;
@@ -107,5 +98,5 @@ html {
 .main__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 90vw;
+  max-width: 80vw;
   margin: 0 auto; }

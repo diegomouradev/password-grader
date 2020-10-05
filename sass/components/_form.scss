@@ -4,17 +4,20 @@
 
 .form {
     display: grid;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr 5rem;
+    justify-items: center;
 }
 
 .password-field {
- 
+    width: 40rem;
+    height: 4.5rem;
+    border-radius: 5rem;
+    padding: 1.5rem;
+    border: none;
+
+  
+
     &--enable {
-        width: 100%;
-        height: 4rem;
-        border-radius: 5rem;
-        padding: 1rem;
-        border: none;
         background-color:#FFFFFF;
         margin: 2rem 0;
         box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.12);
@@ -26,17 +29,9 @@
             
         }
 
-        &:hover {
-            
-        }
     }
 
     &--disable {
-        width: 100%;
-        height: 4rem;
-        border-radius: 5rem;
-        padding: 1rem;
-        border: none;
         background-color: 10px 10px 44px 0px rgba(0,0,0,0.17);
         margin: 1rem 0;
         box-shadow: #FFFFFF;
@@ -51,22 +46,20 @@
 }
 
 .password-toggle {
-
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    // margin-left: -40rem;
+   
     &--enable {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        margin-left: -3rem;
+        
         color: rgba(0, 0, 0, 0.541);
     }
     
     &--disable {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        margin-left: -3rem;
         color: rgba(0, 0, 0, 0.17);
     }
+
 }
    
 
@@ -75,7 +68,7 @@
 }
 
 .btn {
-    width: 50%;
+    width: 20rem;
     height: 4rem;
     border-radius: 5rem;
     padding: 1rem;
