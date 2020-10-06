@@ -20,13 +20,13 @@
     &--enable {
         background-color:#FFFFFF;
         margin: 2rem 0;
-        box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.12);
+        box-shadow: 0 0 20px 5px rgba(0,0,0,0.12);
 
         &::placeholder {
             font-family: inherit;
             font-size: 1.6rem;
             color: black;
-            
+            padding-left: 3rem;
         }
 
     }
@@ -34,13 +34,13 @@
     &--disable {
         background-color: 10px 10px 44px 0px rgba(0,0,0,0.17);
         margin: 1rem 0;
-        box-shadow: #FFFFFF;
+        box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
 
         &::placeholder {
             font-family: inherit;
             font-size: 1.6rem;
             color: rgba(0, 0, 0, 0.322);
-            
+            padding-left: 3rem;
         }
     }
 }
@@ -49,7 +49,7 @@
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    // margin-left: -40rem;
+    margin-left: -13rem;
    
     &--enable {
         

@@ -1,5 +1,6 @@
 .heading {
-    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 
     &__primary{
         font-size: 4rem;
@@ -11,5 +12,7 @@
 }
 
 .paragraph {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 1.6rem;
 }

@@ -15,24 +15,27 @@
   .password-field--enable {
     background-color: #FFFFFF;
     margin: 2rem 0;
-    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.12); }
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.12); }
     .password-field--enable::placeholder {
       font-family: inherit;
       font-size: 1.6rem;
-      color: black; }
+      color: black;
+      padding-left: 3rem; }
   .password-field--disable {
     background-color: 10px 10px 44px 0px rgba(0, 0, 0, 0.17);
     margin: 1rem 0;
-    box-shadow: #FFFFFF; }
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1); }
     .password-field--disable::placeholder {
       font-family: inherit;
       font-size: 1.6rem;
-      color: rgba(0, 0, 0, 0.322); }
+      color: rgba(0, 0, 0, 0.322);
+      padding-left: 3rem; }
 
 .password-toggle {
   display: flex;
   align-items: center;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  margin-left: -13rem; }
   .password-toggle--enable {
     color: rgba(0, 0, 0, 0.541); }
   .password-toggle--disable {
@@ -74,13 +77,17 @@
   -moz-box-shadow: 10px 10px 44px 0px rgba(0, 0, 0, 0.27);
   box-shadow: 10px 10px 44px 0px rgba(0, 0, 0, 0.27); }
 
-.heading__primary {
-  font-size: 4rem; }
-
-.heading__secondary {
-  font-size: 2rem; }
+.heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500; }
+  .heading__primary {
+    font-size: 4rem; }
+  .heading__secondary {
+    font-size: 2rem; }
 
 .paragraph {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 1.6rem; }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
