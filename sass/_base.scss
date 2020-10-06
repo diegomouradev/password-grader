@@ -14,7 +14,7 @@ html {
 
 .main__wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content 1fr;
     max-width: 80vw;
     margin: 0 auto;
 }
